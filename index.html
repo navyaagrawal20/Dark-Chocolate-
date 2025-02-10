@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Chocolate Fun Facts</title>
+    <style>
+        /* Basic styling for the body to center content and set font and colors */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling for the container to center text and add padding and shadow */
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the button to set background, color, and padding */
+        button {
+            background-color: #6b4f4f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Hover effect for the button to change background color */
+        button:hover {
+            background-color: #5a3e3e;
+        }
+
+        /* Styling for the fact display paragraph */
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dark Chocolate Fun Facts</h1>
+        <!-- Button to trigger the display of a fun fact -->
+        <button id="generateFact">Show a Fun Fact</button>
+        <!-- Paragraph to display the fun fact -->
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        // Array of fun facts about dark chocolate
+        const facts = [
+            "Dark chocolate is loaded with powerful antioxidants, even more than some fruits like blueberries and acai berries.",
+            "Consuming dark chocolate in moderation has been linked to improved heart health. It can help lower blood pressure and improve blood flow.",
+            "Dark chocolate contains compounds that can boost serotonin and endorphin levels in the brain, which can improve mood and reduce stress.",
+            "It's a good source of essential minerals such as iron, magnesium, copper, and manganese.",
+            "The higher the cocoa content, the more beneficial the chocolate. Dark chocolate typically contains 50-90% cocoa solids, cocoa butter, and sugar.",
+            "Some studies suggest that dark chocolate can improve brain function by increasing blood flow to the brain.",
+            "The flavonoids in dark chocolate can protect the skin against sun damage and improve skin hydration.",
+            "The use of cocoa dates back to ancient Mesoamerican cultures, where it was often consumed as a bitter beverage.",
+            "Eating dark chocolate in small amounts can help reduce cravings for sweet, salty, and fatty foods.",
+            "Dark chocolate has a complex flavor profile with notes that can range from fruity to nutty, depending on the origin of the cocoa beans."
+        ];
+
+        // Variable to keep track of the current fact index
+        let currentIndex = 0;
+
+        // Event listener for the button click to display the next fun fact
+        document.getElementById('generateFact').addEventListener('click', function() {
+            // Display the current fact
+            document.getElementById('factDisplay').textContent = facts[currentIndex];
+            // Increment the index and wrap around if necessary
+            currentIndex = (currentIndex + 1) % facts.length;
+        });
+    </script>
+</body>
+</html>
